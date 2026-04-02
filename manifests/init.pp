@@ -1,5 +1,9 @@
 # @summary Configure Ledgergraph instance
 #
+# @param hostname is the hostname for the ledgergraph server
+# @param email for the site admin
+# @param aws_access_key_id sets the AWS key to use for Route53 challenge
+# @param aws_secret_access_key sets the AWS secret key to use for the Route53 challenge
 # @param datadir sets where the data is persisted
 # @param ledger_repo is the git repo for ledger data
 # @param ledger_ssh_key is the ssh key to use to update the repo
@@ -9,6 +13,10 @@
 # @param bootdelay sets how long to wait before first run
 # @param frequency sets how often to run updates
 class ledgergraph (
+  String $hostname,
+  String $email,
+  String $aws_access_key_id,
+  String $aws_secret_access_key,
   String $datadir,
   String $ledger_repo,
   String $ledger_ssh_key,
